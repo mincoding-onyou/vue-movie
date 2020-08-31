@@ -32,7 +32,7 @@ export default {
     return {
       nowPlaying: {},
       popular: {},
-      upComing: {},
+      upComming: {},
     };
   },
   components: {

@@ -1,12 +1,15 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
+    <div id="nav" class="text-left">
+      <router-link  to="/">Home</router-link> |
       <router-link to="/search">Search</router-link>
     </div>
-    <b-spinner class="d-block ml-auto mr-auto"  v-if="loading" label="Spinning"></b-spinner>
+    <b-spinner
+      class="d-block ml-auto mr-auto"
+      v-if="loading"
+      label="Spinning"
+    ></b-spinner>
     <router-view />
-    
   </div>
 </template>
 <script>
@@ -18,29 +21,21 @@ export default {
 };
 </script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400&display=swap');
-*{
-  
-  
-  color:#ffffff;
-  
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400&display=swap");
+* {
+  color: #ffffff;
 }
-body{
-  font-family: 'Noto Sans KR', sans-serif;
-  
-  
+body {
+  font-family: "Noto Sans KR", sans-serif;
 }
 #app {
-  
-background-color: rgb(20, 20, 20);
+  background-color: rgb(20, 20, 20);
   /* font-family: Avenir, Helvetica, Arial, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
   color: #2c3e50;
   min-height: 100vh;
-
-  
 }
 
 #nav {
@@ -58,5 +53,11 @@ background-color: rgb(20, 20, 20);
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+.router-link-active {
+  /* color: white !important; */
+}
+.router-link-exact-active {
+  color: white !important;
 }
 </style>
