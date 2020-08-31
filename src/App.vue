@@ -4,21 +4,51 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <b-spinner class="d-block ml-auto mr-auto"  v-if="loading" label="Spinning"></b-spinner>
+    <router-view />
+    
   </div>
 </template>
-
+<script>
+import { mapState } from "vuex";
+export default {
+  computed: {
+    ...mapState(["loading"]),
+  },
+};
+</script>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400&display=swap');
+*{
+  
+  
+  color:#ffffff;
+  
+}
+body{
+  font-family: 'Noto Sans KR', sans-serif;
+  
+  
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  
+background-color: rgb(20, 20, 20);
+  /* font-family: Avenir, Helvetica, Arial, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  
   color: #2c3e50;
+  min-height: 100vh;
+
+  
 }
 
 #nav {
-  padding: 30px;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  z-index: 99;
+  background-color: black;
 }
 
 #nav a {
