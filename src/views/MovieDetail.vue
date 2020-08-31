@@ -5,8 +5,14 @@
       :style="{ backgroundImage: `url(${image(movieDetail.backdrop_path)})` }"
     ></div>
     <div class="movie-content d-flex">
-      <img class="mt-2 w-25" :src="image(movieDetail.poster_path)" />
-      <div class="ml-4">
+      <div style="">
+        <img
+          class="mt-2 "
+          style="height:80vh;"
+          :src="image(movieDetail.poster_path)"
+        />
+      </div>
+      <div class="ml-4 w-75">
         <h1 class="movie-title">{{ movieDetail.title }}</h1>
         <div class="movie-information-wrapper mt-4 d-flex align-items-center">
           <div>{{ movieDetail.release_date.split("-")[0] }}</div>
@@ -23,7 +29,11 @@
             </div>
           </div>
           <span v-if="movieDetail.homepage" class="ml-1">ㆍ</span>
-          <a class="ml-1 h4 homepage-link" target="_blank" :href="movieDetail.homepage"
+          <a
+            v-if="movieDetail.homepage"
+            class="ml-1 h4 homepage-link"
+            target="_blank"
+            :href="movieDetail.homepage"
             ><svg
               width="1em"
               height="1em"
@@ -41,7 +51,30 @@
           ></a>
         </div>
         <div class="movie-overview mt-3">{{ movieDetail.overview }}</div>
-        <div class="mt-3">유튜브</div>
+        <!-- <div class="mt-3"> -->
+        <!-- <b-embed
+          v-if="movieDetail.videos && movieDetail.videos.results"
+            type="iframe"
+             :key="movieDetail.videos.results[0].key"
+             
+            aspect="16by9 "
+             :src="youtube(movieDetail.videos.results[0].key)"
+            allowfullscreen
+          ></b-embed> -->
+        <div v-if="movieDetail.videos && movieDetail.videos.results">
+          <iframe
+          v-if="movieDetail.videos.results[0]"
+            class="mt-5"
+            :key="movieDetail.videos.results[0].key"
+            width="640"
+            height="360"
+            :src="youtube(movieDetail.videos.results[0].key)"
+            frameborder="0"
+            allow=" fullscreen "
+          >
+          </iframe>
+        </div>
+        <!-- </div> -->
       </div>
     </div>
   </div>
@@ -73,6 +106,9 @@ export default {
     image(img) {
       console.log();
       return `https://image.tmdb.org/t/p/original/${img}`;
+    },
+    youtube(src) {
+      return `https://www.youtube.com/embed/${src}`;
     },
   },
 };
@@ -116,8 +152,8 @@ export default {
 .movie-title {
   margin-left: 5px;
 }
-.movie-information-wrapper{
-    font-size: 13px;
+.movie-information-wrapper {
+  font-size: 13px;
 }
 .genres {
   display: flex;
@@ -138,8 +174,8 @@ export default {
   font-size: 14px;
   color: #dddddddd;
 }
-.homepage-link:hover{
-    opacity: 0.5;
+.homepage-link:hover {
+  opacity: 0.5;
 }
 /* .aa {
   min-height: 100vh;

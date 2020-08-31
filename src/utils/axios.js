@@ -17,6 +17,6 @@ export const movieApi = {
   // append to response에 대한 설명 https://developers.themoviedb.org/3/get1ting-started/append-to-response
   movieDetail: (id) =>
     request(`movie/${id}`, {
-      append_to_response: "videos",
+      params: { append_to_response: "videos" },
     }),
 };
