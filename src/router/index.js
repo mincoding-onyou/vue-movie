@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Main from "../views/Main.vue";
 import MainVuex from "../views/MainVuex.vue";
 import MovieDetail from "../views/MovieDetail.vue";
+import Search from "../views/Search.vue";
 
 Vue.use(VueRouter);
 
@@ -22,6 +23,11 @@ const routes = [
     name: "Detail",
     component:MovieDetail
   },
+  {
+    path:"/search",
+    name:"Search",
+    component:Search
+  }
 ];
 
 const router = new VueRouter({

@@ -6,8 +6,8 @@
       <MovieText :text="'Popular'"></MovieText>
       <MovieLists :movieList="popular"></MovieLists>
       <!-- <div class="h4 ml-3 mt-5 mb-4 text-white">Comming Soon</div> -->
-      <MovieText :text="'Cooming Soon'"></MovieText>
-      <MovieLists :movieList="upComing"></MovieLists>
+      <MovieText :text="'Comming Soon'"></MovieText>
+      <MovieLists :movieList="upComming"></MovieLists>
       <!-- <MovieLists :movieList="movieList"></MovieLists> -->
       <!-- <div
         class="movie-card"
@@ -66,7 +66,7 @@ export default {
       this.SET_LOADING(false);
       this.nowPlaying = now;
       this.popular = pop;
-      this.upComing = up;
+      this.upComming = up;
     } catch (error) {
       this.movieList = "해당 자료가 존재하지 않습니다.";
     }

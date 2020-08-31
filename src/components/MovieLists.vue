@@ -7,10 +7,11 @@
       :key="li.id"
     >
       <div  @click="goDetail(li.id)" v-if="li">
-        <b-img fluid :src="image(li.poster_path)" alt="Image 2"></b-img>
+        <b-img style="width:125px; height:180px;" v-if="li.poster_path" fluid :src="image(li.poster_path)" alt="Image 2"></b-img>
+        <b-img style="width:125px; height:180px;" v-else fluid :src="noImage" alt="Image 2"></b-img>
         <div class="movie-information">
           <div class="movie-title">{{ li.title }}</div>
-          <div class="movie-date">{{ li.release_date.split("-")[0] }}</div>
+          <div class="movie-date" v-if="li.release_date">{{ li.release_date.split("-")[0] }}</div>
         </div>
       </div>
     </div>
@@ -21,7 +22,12 @@
 
 export default {
   props: ['movieList'],
-
+  data(){
+    return {
+      noImage: require("../assets/error.jpg")
+    }
+  }
+,
   methods: {
     image(img) {
       return `https://image.tmdb.org/t/p/w300/${img}`;

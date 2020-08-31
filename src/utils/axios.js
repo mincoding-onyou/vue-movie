@@ -16,7 +16,14 @@ export const movieApi = {
   upComing: () => request.get("movie/upcoming"),
   // append to response에 대한 설명 https://developers.themoviedb.org/3/get1ting-started/append-to-response
   movieDetail: (id) =>
-    request(`movie/${id}`, {
+    request.get(`movie/${id}`, {
       params: { append_to_response: "videos" },
+    }),
+  // 검색을 구현하면 되겠군요
+  search: (keyword) =>
+    request.get(`search/movie/`, {
+      params: {
+        query: keyword,
+      },
     }),
 };

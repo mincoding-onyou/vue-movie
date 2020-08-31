@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/search">Search</router-link>
     </div>
     <b-spinner class="d-block ml-auto mr-auto"  v-if="loading" label="Spinning"></b-spinner>
     <router-view />
