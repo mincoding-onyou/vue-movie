@@ -1,3 +1,5 @@
+https://loy124.tistory.com/296 내용 정리 
+
 # vue-movie
 
 ## Project setup
