@@ -12,11 +12,11 @@ npm install
 npm run serve
 ```
 
+떡락
 ### Compiles and minifies for production
 ```
 npm run build
 ```
-
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 "# vue-movie" 
