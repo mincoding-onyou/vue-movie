@@ -12,7 +12,7 @@ npm install
 npm run serve
 ```
 
-떡락
+한강
 ### Compiles and minifies for production
 ```
 npm run build
