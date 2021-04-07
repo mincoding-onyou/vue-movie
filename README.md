@@ -13,6 +13,7 @@ npm run serve
 ```
 
 여기에 사람있어요
+구출
 
 ### Compiles and minifies for production
 ```
