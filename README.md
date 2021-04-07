@@ -12,7 +12,7 @@ npm install
 npm run serve
 ```
 
-구출
+여기에 사람있어요
 
 ### Compiles and minifies for production
 ```
