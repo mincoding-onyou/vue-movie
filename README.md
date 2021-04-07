@@ -12,7 +12,7 @@ npm install
 npm run serve
 ```
 
-한강
+한강뷰
 ### Compiles and minifies for production
 ```
 npm run build
